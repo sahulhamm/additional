@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: js-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app.js
+  template:
+    metadata:
+      labels:
+        app: app.js
+    spec:
+      containers:
+      - name: sample-container
+        image: node:14
